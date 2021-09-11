@@ -1,28 +1,27 @@
-# Simple Components
-A small, vanilla JS library for easily replicating controls/components.
+# Workers Firebase RTDB Client
+A Firebase RealTime Database Client library for use specifically with CloudFlare Workers.
 
 # Usage:
 ### NPM:
-``npm i @sharks-interactive/simple-components``
+``npm i @sharks-interactive/``
 ### CDN:
 #### JSDELIVER:
-``https://www.jsdelivr.com/package/npm/@sharks-interactive/simple-components``
+``https://www.jsdelivr.com/package/npm/@sharks-interactive/``
 #### UNPKG:
-``https://unpkg.com/@sharks-interactive/simple-components@1.1.3/dist/simple-components.min.js``
+``https://unpkg.com/@sharks-interactive/``
 ### GITHUB:
-``https://github.com/Sharks-Interactive/Simple-Components/releases/download/1.1.3/simple-components.min.js``
+``https://github.com/Sharks-Interactive/``
 
 ## How it works:
-Simple components loads components from individual html files and replicates them as many times as specified.
-EG: A settings page with multiple text + radio button groups. 
-Make the label and radion button in a component.html file
-Call simple comps to render x number of them with specific data.
+This client library is a simplified layer between your code and the Firebase REST API.
+In the background it uses the Workers FETCH API to send HTTP requests to your Database.
 
 ## Functionality
-- Custom component data
-- Conditional rendering of child elements
-- Easy replication of repeated HTML
-### All in vanilla js with _no_ dependencies and in only 1KB [for minified version] 
+- Easily create, edit, update, and delete json from your database
+- Easy authentication with your database and it rules
+- Supports conditional requests and ETag's
+- Subscribe to data change events
+### All in vanilla js with _no_ dependencies and in only **KB [for minified version] 
 
 ###### (The four dependencies listed are devDeps)
 
