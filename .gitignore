@@ -1,0 +1,12 @@
+.project
+.settings
+*~
+.DS_Store
+package-lock.json
+.npmignore
+.npmrc
+
+npm-debug.log*
+
+/external
+/node_modules

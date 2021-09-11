@@ -1,0 +1,41 @@
+name: MinifyJS
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the prod branch
+  push:
+    branches: [ prod ]
+  pull_request:
+    branches: [ prod ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  minify:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so auto-minify job can access it
+      - uses: actions/checkout@v2.3.4
+
+      - name: Auto Minify
+        uses: nizarmah/auto-minify@v2.0
+        with:
+          directory: 'src'
+          output: 'dist'
+          js_engine: uglify-js
+
+  # Auto commits minified files to the repository
+  # Ignore it if you don't want to commit the files to the repository 
+      - name: Auto committing minified files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: 'dist/'
+          commit_message: "Github Action: Auto Minified JS files"
+          branch: ${{ github.ref }}
+          add_options: '-f'
