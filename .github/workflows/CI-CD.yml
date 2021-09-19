@@ -18,9 +18,11 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
 
-      - name: Clean
+      - name: Setup
         run: yarn install
+      - name: Format
         run: npm run format
+      - name: Fix
         run: npm run lint-fix
 
       - name: Build
