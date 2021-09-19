@@ -1,5 +1,6 @@
 # Workers Firebase RTDB Client
-A Firebase RealTime Database Client library for use specifically with CloudFlare Workers.
+A Firebase RealTime Database Client library for use specifically with CloudFlare Workers.  
+Does not set or mutate global state.
 
 # Usage:
 ### NPM:
