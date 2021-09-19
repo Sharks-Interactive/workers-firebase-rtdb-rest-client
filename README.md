@@ -3,14 +3,14 @@ A Firebase RealTime Database Client library for use specifically with CloudFlare
 
 # Usage:
 ### NPM:
-``npm i @sharks-interactive/``
+``npm i @sharks-interactive/workers-firebase-rtdb-rest-client``
 ### CDN:
 #### JSDELIVER:
-``https://www.jsdelivr.com/package/npm/@sharks-interactive/``
+``https://www.jsdelivr.com/package/npm/@sharks-interactive/workers-firebase-rtdb-rest-client``
 #### UNPKG:
-``https://unpkg.com/@sharks-interactive/``
+``https://unpkg.com/@sharks-interactive/workers-firebase-rtdb-rest-client``
 ### GITHUB:
-``https://github.com/Sharks-Interactive/``
+``https://github.com/Sharks-Interactive/releases``
 
 ## How it works:
 This client library is a simplified layer between your code and the Firebase REST API.
@@ -23,7 +23,7 @@ In the background it uses the Workers FETCH API to send HTTP requests to your Da
 - Subscribe to data change events
 ### All in vanilla js with _no_ dependencies and in only **KB [for minified version] 
 
-###### (The four dependencies listed are devDeps)
+###### (The dependencies listed are devDeps)
 
 ### Read the wiki for documentation.
 
@@ -31,7 +31,7 @@ In the background it uses the Workers FETCH API to send HTTP requests to your Da
   - Contains the source code
 
 ## dist /
-  - Contains minified code
+  - Contains js code
   
 Project created and maintained by Sharks Interactive.
   
@@ -39,8 +39,5 @@ Project created and maintained by Sharks Interactive.
   - Commit to ``staging`` and pr to ``prod`` for changes
 
 ### Code Style:
-  - camelCase for variables eg: ``var correctUse;``
-  - cascalCase for function names eg: ``function correctUse();``
-  - Brackets should be on the same line
-  - Spaces, not tabs
-  - Depending on the situation (readability/line length) single line if statements should be same line eg: ``if (this) doStuff();``
+  - Continious Integration will handle formatting for you
+  - Use ESLINT locally to catch errors pre-pr
