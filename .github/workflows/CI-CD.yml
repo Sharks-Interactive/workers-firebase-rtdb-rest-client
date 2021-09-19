@@ -1,0 +1,34 @@
+name: CI-CD
+
+on:
+  # Triggers the workflow on push or pull request events but only for the prod branch
+  push:
+    branches: [ prod ]
+  pull_request:
+    branches: [ prod ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+
+      - id: Clean
+      - run: yarn install
+      - run: npm run format
+      - run: npm run lint-fix
+
+      - id: Build
+      - run: npm run build
+      
+      - id: Publish
+      - run: npm publish --access public
+        env:
+            NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

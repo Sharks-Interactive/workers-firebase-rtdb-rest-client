@@ -6,6 +6,8 @@ package-lock.json
 .npmignore
 .npmrc
 
+dist
+
 npm-debug.log*
 
 /external

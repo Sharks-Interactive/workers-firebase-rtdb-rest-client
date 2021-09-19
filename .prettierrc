@@ -1,6 +1,5 @@
 {
     "extends": [
-      "plugin:prettier/recommended"
     ],
     "bracketSpacing": false,
     "arrowParens": "always",
