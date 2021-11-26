@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  # Triggers the workflow when new PRS or commits are created on Prod
+  push:
+    branches:
+      - prod
+  pull_request:
+    branches:
+      - prod
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+
+      - name: Setup
+        run: yarn install
+      - name: Format
+        run: npm run format
+      - name: Fix
+        run: npm run lint-fix
+
+      - name: Auto committing styled files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: 'src/'
+          commit_message: "Github Action: Auto styled TS files"
+          branch: ${{ github.ref }}
+          add_options: '-f'
+
+      - name: Build
+        run: npm run build

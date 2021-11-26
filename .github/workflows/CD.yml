@@ -1,9 +1,9 @@
-name: CI-CD
+name: CD
 
 on:
-  # Triggers the workflow on push or pull request events but only for the prod branch
-  push:
-    branches: [ prod ]
+  # Triggers the workflow when new releases are created
+  release:
+    types: [published]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
