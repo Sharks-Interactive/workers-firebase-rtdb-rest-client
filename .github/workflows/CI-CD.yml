@@ -18,10 +18,20 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
 
-      - name: Clean
+      - name: Setup
         run: yarn install
+      - name: Format
         run: npm run format
+      - name: Fix
         run: npm run lint-fix
+
+      - name: Auto committing styled files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: 'src/'
+          commit_message: "Github Action: Auto styled TS files"
+          branch: ${{ github.ref }}
+          add_options: '-f'
 
       - name: Build
         run: npm run build
