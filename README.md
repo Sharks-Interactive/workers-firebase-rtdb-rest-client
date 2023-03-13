@@ -1,9 +1,11 @@
 <p align='center'>
   <img src="https://i.imgur.com/7svMXLi.png" />
 </p>
+
 ![npm version](https://img.shields.io/npm/v/@sharks-interactive/workers-firebase-rtdb-rest-client)
 ![npm downloads](https://img.shields.io/npm/dm/@sharks-interactive/workers-firebase-rtdb-rest-client)
 ![npm types](https://img.shields.io/npm/types/@sharks-interactive/workers-firebase-rtdb-rest-client)
+
 
 # Workers Firebase RTDB Client
 **Workers Firebase RTDB** is a [Firebase Realtime Database](https://firebase.google.com/docs/database) client library for use specifically with [Cloudflare Workers](https://developers.cloudflare.com/workers/) written in TypeScript.
